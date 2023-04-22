@@ -103,33 +103,47 @@ body {
   position: relative;
 }
 
+.menu-link:hover,
+.menu-link:focus {
+  color: var(--subaccent-color);
+}
+
+.menu-link-studio,
+.menu-link-portfolio {
+  color: var(--accent-color);
+}
+
 .menu-link-studio::after,
 .menu-link-portfolio::after {
   content: "";
   display: block;
   width: 48px;
   height: 4px;
-  background: var(--subaccent-color);
+  background-color: var(--subaccent-color);
   border-radius: 2px;
   width: 100%;
   position: absolute;
   bottom: -1px;
   left: 0;
+
+  /*  */
+  transition: background-color var(--subaccent-color);
 }
 
-/* .menu-link::after {
+.menu-link:hover::after,
+.menu-link:focus::after {
   content: "";
   display: block;
   width: 48px;
   height: 4px;
-  background: var(--subaccent-color);
+  background-color: var(--subaccent-color);
   border-radius: 2px;
   width: 100%;
   position: absolute;
   bottom: -1px;
   left: 0;
   opacity: 1;
-} */
+}
 
 .contact {
   font-style: normal;
@@ -655,6 +669,7 @@ body {
   width: 24px;
   height: 24px;
   padding: 0;
+  cursor: pointer;
 
   background: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -665,12 +680,23 @@ body {
   align-items: center;
 
   position: absolute;
-  top: 32px;
-  right: 32px;
+  top: 24px;
+  right: 24px;
+
+  transition: background-color var(--animation);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: var(--subaccent-color);
+}
+
+.modal-close-btn:hover .modal-close-icon {
+  fill: var(--white-color);
 }
 
 .modal-close-icon {
-  fill: var(--maine-color);
+  transition: fill var(--animation);
 }
 
 /* /modal */
